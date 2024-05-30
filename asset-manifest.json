@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DrDiban/heating-medium-targetting/static/css/main.e6c13ad2.css",
+    "main.js": "/DrDiban/heating-medium-targetting/static/js/main.3c2763e1.js",
+    "static/js/453.47da55df.chunk.js": "/DrDiban/heating-medium-targetting/static/js/453.47da55df.chunk.js",
+    "index.html": "/DrDiban/heating-medium-targetting/index.html",
+    "main.e6c13ad2.css.map": "/DrDiban/heating-medium-targetting/static/css/main.e6c13ad2.css.map",
+    "main.3c2763e1.js.map": "/DrDiban/heating-medium-targetting/static/js/main.3c2763e1.js.map",
+    "453.47da55df.chunk.js.map": "/DrDiban/heating-medium-targetting/static/js/453.47da55df.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3c2763e1.js"
+  ]
+}
