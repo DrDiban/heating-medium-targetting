@@ -171,13 +171,6 @@ const generateSummaryData  = (heatLoadCascadeValue:number, heatingMediumInletTem
     const highestValue = Math.max(...minHeatCapacityFlowrate);
     const highestIndex = minHeatCapacityFlowrate.indexOf(highestValue);
 
-    console.log("apple")
-    console.log(highestValue)
-    console.log(highestIndex)
-    console.log(coldFluidTemp[highestIndex])
-
-
-
     return {totalHeatLoad : heatLoadCascadeValue.toFixed(2),
             heatingMediumInletTemp : heatingMediumInletTemp,
             heatingMediumOutletTemp : heatingMediumReturnTemperature.toFixed(2),

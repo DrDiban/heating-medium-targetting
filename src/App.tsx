@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Form, Input, Button, Card, Space, Row, Col, Table, Descriptions, Divider } from 'antd';
 import { handleChangeHot, handleMinAppTemp, handleChangeCold, handleAddColdFluid, handleDeleteColdFluid } from './handleChange'; // Adjust the path as needed
-import { validateColdOutletTemperature, validateHeatLoad, validateMinAppTemp } from './validationHandlers'; // Adjust the path as needed
+import { validateInletTemperature, validateColdOutletTemperature, validateHeatLoad, validateMinAppTemp } from './validationHandlers'; // Adjust the path as needed
 import { calculateHeatIntegration } from './heatIntegration';
 import { AlignType } from 'rc-table/lib/interface';
 import { FormValues, FormValuesData, DataColumn, ChartDataItem, ResultData } from './types'; // Adjust the path if necessary
@@ -90,7 +90,7 @@ const MyComponent: React.FC = () => {
     <Space direction="vertical" size={10} style={{ width: '100%' }}>
       <Row gutter={16}>
         <Col span={11}>
-          <Card title="Hot Fluid" extra={<a href="#">More</a>} style={{ width: '100%', margin: '32px'}} headStyle={{ color: 'red' }}>
+          <Card title="Hot Fluid" style={{ width: '100%', margin: '32px'}} headStyle={{ color: 'red' }}>
             <Form form={form} onFinish={handleFinish}>
               <Row justify="space-around">
                 <Col span={12}>
@@ -98,7 +98,7 @@ const MyComponent: React.FC = () => {
                     label="Inlet Temperature"
                     name="inletTemp"
                     rules={[
-                      { required: true, message: 'Please enter inlet temperature!' },
+                      {validator: validateInletTemperature},
                     ]}
                   >
                     <Input placeholder="Enter inlet temperature..." 
@@ -113,7 +113,7 @@ const MyComponent: React.FC = () => {
         </Col>
 
         <Col span={11}>
-          <Card title="Minimum Approach Temperature" extra={<a href="#">More</a>} style={{ width: '100%', margin: '32px'}} >
+          <Card title="Minimum Approach Temperature"  style={{ width: '100%', margin: '32px'}} >
             <Form form={form} onFinish={handleFinish}>
               <Row justify="space-around">
                 <Col span={14}>
@@ -123,6 +123,7 @@ const MyComponent: React.FC = () => {
                     rules={[
                       { required: true, message: 'Please enter minimum approach temperature!' },
                       { validator: validateMinAppTemp },
+                      
                     ]}
                   >
                     <Input 
@@ -149,7 +150,7 @@ const MyComponent: React.FC = () => {
                       label="Inlet Temperature"
                       name={`inletTemp_${index}`}
                       rules={[
-                        { required: true, message: 'Please enter inlet temperature!' },
+                        {validator: validateInletTemperature},
                       ]}
                     >
                       <Input
